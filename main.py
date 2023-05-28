@@ -7,15 +7,15 @@ from PIL import ImageTk, Image
 
 root = Tk()
 
-frame = tk.Frame(root, bg='#45aaf2')
+frame = tk.Frame(root, bg='#641425')
 
 lbl_pic_path = tk.Label(frame, text='Image Path:', padx=100, pady=100,
-                        font=('verdana', 16), bg='#45aaf2')
-lbl_show_pic = tk.Label(frame, bg='#45aaf2')
-lbl_filtered_pic = tk.Label(frame, bg='#45aaf2')
-lbl_filtered_pic2 = tk.Label(frame, bg='#45aaf2')
-lbl_filtered_pic3 = tk.Label(frame, bg='#45aaf2')
-lbl_filtered_pic4 = tk.Label(frame, bg='#45aaf2')
+                        font=('verdana', 16), bg='#641425')
+lbl_show_pic = tk.Label(frame, bg='#641425')
+lbl_filtered_pic = tk.Label(frame, bg='#641425')
+lbl_filtered_pic2 = tk.Label(frame, bg='#641425')
+lbl_filtered_pic3 = tk.Label(frame, bg='#641425')
+lbl_filtered_pic4 = tk.Label(frame, bg='#641425')
 entry_pic_path = tk.Entry(frame, font=('verdana', 16))
 btn_browse = tk.Button(frame, text='Seleccione imagen', bg='grey', fg='#ffffff',
                        font=('verdana', 16))
@@ -48,7 +48,7 @@ def selectPic():
     entry_pic_path.insert(0, filename)
 
 
-def applyFilter():
+def applyMedianFilter():
     global filtered_img
     if img:
         # Load the selected image file using OpenCV
@@ -130,7 +130,7 @@ def applyMeanFilter():
 
 
 btn_browse['command'] = selectPic
-btn_filter['command'] = applyFilter
+btn_filter['command'] = applyMedianFilter
 btn_filter2['command'] = applyLaplacianFilter
 btn_filter3['command'] = applySobelFilter
 btn_filter4['command'] = applyMeanFilter
